@@ -2,18 +2,22 @@
 
 ## 初始化
 
-### 插件管理
-
-```shell
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
 ### 下载配置
 
 ```shell
 git clone https://github.com/sanmuyan/nvim.git \
 ~/.config/nvim
+```
+
+### 插件管理
+
+```shell
+# 下载 Packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# 同步插件
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' 
 ```
 
 ## 常用快捷键

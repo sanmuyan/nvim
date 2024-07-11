@@ -3,14 +3,11 @@ return require('packer').startup(function(use)
     use 'Exafunction/codeium.vim'
     use {
         'akinsho/bufferline.nvim',
-        tag = "v2.*",
         requires = 'kyazdani42/nvim-web-devicons'
     }
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = {'kyazdani42/nvim-web-devicons' -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        requires = 'kyazdani42/nvim-web-devicons'
     }
 
     -- nvim-cmp
@@ -29,6 +26,6 @@ return require('packer').startup(function(use)
     use 'Mofiqul/vscode.nvim'
 
     use 'folke/which-key.nvim'
-	use {"akinsho/toggleterm.nvim", tag = '*'}
+	use {"akinsho/toggleterm.nvim"}
 
 end)
