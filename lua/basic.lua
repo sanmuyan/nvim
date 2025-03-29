@@ -1,8 +1,7 @@
 -- 设置文件编码格式为 utf-8
-vim.g.encoding = "utf-8"
-
--- 设置终端编码格式为 utf-8
-vim.o.termencoding = "utf-8"
+vim.o.encoding = "utf-8"
+vim.o.fileencoding = "utf-8"
+vim.o.fileencodings = "utf-8"
 
 -- 显示行号
 vim.o.number = true
