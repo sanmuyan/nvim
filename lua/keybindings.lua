@@ -32,25 +32,31 @@ vim.api.nvim_set_keymap("n", "so", ":only<CR>", {
 })
 
 -- 多窗口跳转
--- 跳转到下一个垂直窗口
+-- 跳转到左侧垂直窗口
 vim.api.nvim_set_keymap("n", "<leader>h", "<C-w>h", {
     noremap = true,
     silent = true
 })
--- 跳转到上一个垂直窗口
+-- 跳转到右侧垂直窗口
 vim.api.nvim_set_keymap("n", "<leader>l", "<C-w>l", {
     noremap = true,
     silent = true
 })
--- 跳转到下一个水平窗口
+-- 跳转到下方水平窗口
 vim.api.nvim_set_keymap("n", "<leader>j", "<C-w>j", {
     noremap = true,
     silent = true
 })
--- 跳转到上一个水平窗口
+-- 跳转到上方水平窗口
 vim.api.nvim_set_keymap("n", "<leader>k", "<C-w>k", {
     noremap = true,
     silent = true
+})
+
+-- 窗口切换
+vim.api.nvim_set_keymap("n", "<leader>w", "<C-w>w", {
+    noremap = true,
+    silent = true                                                                                              
 })
 
 -- 将光标所在单词转化为全大写

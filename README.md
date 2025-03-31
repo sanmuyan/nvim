@@ -54,10 +54,11 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 - `sh` 创建水平分割窗口
 - `sc` 关闭当前窗口
 - `so` 关闭其他窗口
-- `<leader>h` 跳转到下一个垂直窗口
-- `<leader>l` 跳转到上一个垂直窗口
-- `<leader>j` 跳转到下一个水平窗口
-- `<leader>k` 跳转到上一个水平窗口
+- `<leader>h` 跳转到左侧垂直窗口
+- `<leader>l` 跳转到右侧垂直窗口
+- `<leader>j` 跳转到下方水平窗口
+- `<leader>k` 跳转到上方水平窗口
+- `<leader>w` 切换窗口
 
 ### 标签
 
