@@ -59,6 +59,8 @@ nvim -u ~\AppData\Local\nvim\first_init.lua --headless -c 'autocmd User PackerCo
 - `dw` 删除光标所在单词
 - `C+u` 把单词转为大写
 - `C+l` 把单词转为小写
+- `gcc` 注释当前行
+- `gc` 多行注释（可视模式）
 
 ### 文件树
 
