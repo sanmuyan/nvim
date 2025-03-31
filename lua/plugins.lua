@@ -26,6 +26,14 @@ return require('packer').startup(function(use)
     use {'Mofiqul/vscode.nvim'}
 
     use {'folke/which-key.nvim'}
+
 	use {"akinsho/toggleterm.nvim"}
+	
+	use {
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end
+	}
 
 end)
