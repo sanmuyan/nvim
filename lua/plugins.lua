@@ -1,13 +1,13 @@
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'Exafunction/codeium.vim'
+    use {'wbthomason/packer.nvim'}
+    use {'Exafunction/codeium.vim'}
     use {
         'akinsho/bufferline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
 
     -- nvim-cmp
@@ -23,9 +23,9 @@ return require('packer').startup(function(use)
     -- lspkind
     use {'onsails/lspkind-nvim'}
 
-    use 'Mofiqul/vscode.nvim'
+    use {'Mofiqul/vscode.nvim'}
 
-    use 'folke/which-key.nvim'
+    use {'folke/which-key.nvim'}
 	use {"akinsho/toggleterm.nvim"}
 
 end)

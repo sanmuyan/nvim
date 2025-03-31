@@ -4,19 +4,23 @@
 
 ### 下载配置
 
+> Linux
+
 ```shell
 git clone https://github.com/sanmuyan/nvim.git \
 ~/.config/nvim
 ```
 
-```pwsh
-# Windows pwsh
+> Windows pwsh
 
+```pwsh
 git clone https://github.com/sanmuyan/nvim.git `
 ~\AppData\Local\nvim
 ```
 
 ### 插件管理
+
+> Linux
 
 ```shell
 # 下载 Packer
@@ -27,9 +31,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 nvim -u ~/.config/nvim/first_init.lua --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
-```pwsh
-# Windows pwsh
+> Windows pwsh
 
+```pwsh
 # 下载 Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim `
 ~\AppData\Local\nvim\site\pack\packer\start\packer.nvim
