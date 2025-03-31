@@ -9,6 +9,13 @@ git clone https://github.com/sanmuyan/nvim.git \
 ~/.config/nvim
 ```
 
+```pwsh
+# Windows pwsh
+
+git clone https://github.com/sanmuyan/nvim.git `
+~\AppData\Local\nvim
+```
+
 ### 插件管理
 
 ```shell
@@ -17,7 +24,18 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # 同步插件
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' 
+nvim -u ~/.config/nvim/first_init.lua --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+```
+
+```pwsh
+# Windows pwsh
+
+# 下载 Packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim `
+~\AppData\Local\nvim\site\pack\packer\start\packer.nvim
+
+# 同步插件
+nvim -u ~\AppData\Local\nvim\first_init.lua --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 ## 常用快捷键
