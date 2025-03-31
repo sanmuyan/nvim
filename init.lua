@@ -8,7 +8,7 @@ require('keybindings')
 require("plugins")
 
 -- tab标签配置
--- require("plugin-config/bufferline")
+require("plugin-config/bufferline")
 
 -- 文件树配置
 require("plugin-config/nvim-tree")
