@@ -3,7 +3,7 @@ return require('packer').startup(function(use)
     use {'wbthomason/packer.nvim'}
 
     -- AI 补全
-    use {'Exafunction/codeium.vim'}
+    use {'Exafunction/windsurf.vim'}
 
     -- 标签管理
     use {
