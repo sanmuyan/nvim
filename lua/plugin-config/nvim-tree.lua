@@ -39,3 +39,7 @@ end
 -- vim.api.nvim_create_autocmd({"VimEnter"}, {
 --    callback = open_nvim_tree
 --})
+
+-- 禁用内置文件管理器
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

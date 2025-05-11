@@ -12,8 +12,6 @@ require("plugin-config/bufferline")
 
 -- 文件树配置
 require("plugin-config/nvim-tree")
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 -- 快捷键提示配置
 require("plugin-config/which-key")
@@ -23,7 +21,12 @@ require("plugin-config/cmp")
 
 -- 主题配置
 require("plugin-config/vscode")
-vim.cmd [[colorscheme vscode]]
 
 -- 终端配置
 require("plugin-config/toggleterm")
+
+-- AI 编码配置
+require("plugin-config/codeium")
+
+-- 状态栏配置
+require("plugin-config/lualine")

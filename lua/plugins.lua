@@ -3,34 +3,46 @@ return require('packer').startup(function(use)
     use {'wbthomason/packer.nvim'}
 
     -- AI 补全
-    use {'Exafunction/windsurf.vim'}
+    use {
+        'Exafunction/windsurf.nvim',
+        requires = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}
+    }
+
+    -- 状态栏
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
 
     -- 标签管理
     use {
         'akinsho/bufferline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = 'nvim-tree/nvim-web-devicons'
     }
 
     -- 文件树
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = 'nvim-tree/nvim-web-devicons'
     }
 
     -- 代码补全引擎
     use {'hrsh7th/nvim-cmp'}
 
     -- 代码补全源
+    use {'neovim/nvim-lspconfig'}
     use {'hrsh7th/cmp-nvim-lsp'}
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
     use {'hrsh7th/cmp-cmdline'}
-    use {'hrsh7th/cmp-vsnip'}
 
     -- 代码片段补全引擎	
-    use {'hrsh7th/vim-vsnip'}
+    -- use {'hrsh7th/vim-vsnip'}
+    -- use {'hrsh7th/cmp-vsnip'}
+    use {'L3MON4D3/LuaSnip'}
+    use {'saadparwaiz1/cmp_luasnip'}
 
-    -- 代码片段补全来源
+    -- 常见代码片段
     use {'rafamadriz/friendly-snippets'}
 
     -- 代码补全 UI 增强

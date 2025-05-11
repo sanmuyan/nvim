@@ -13,3 +13,6 @@ require('vscode').setup({
         vscLineNumber = '#FFFFFF'
     }
 })
+
+-- 设置主题颜色
+vim.cmd [[colorscheme vscode]]

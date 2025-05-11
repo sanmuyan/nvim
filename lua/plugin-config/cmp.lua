@@ -1,10 +1,13 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+local luasnip = require 'luasnip'
+require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
     -- 设置代码片段引擎，用于根据代码片段补全
     snippet = {
         expand = function(args)
-            vim.fn["vsnip#anymous"](args.body)
+            -- vim.fn['vsnip#anonymous'](args.body)
+            luasnip.lsp_expand(args.body)
         end
     },
 
@@ -39,37 +42,12 @@ cmp.setup({
     sources = cmp.config.sources({{
         name = 'nvim_lsp'
     }, {
-        name = 'vsnip'
+        name = 'luasnip'
     }, {
         name = 'buffer'
     }, {
-        name = 'path'
+        name = 'codeium'
     }}),
-
-    -- 根据文件类型来选择补全来源
-    cmp.setup.filetype('gitcommit', {
-        sources = cmp.config.sources({{
-            name = 'buffer'
-        }})
-    }),
-
-    -- 命令模式下输入 `/` 启用补全
-    cmp.setup.cmdline('/', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {{
-            name = 'buffer'
-        }}
-    }),
-
-    -- 命令模式下输入 `:` 启用补全
-    cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({{
-            name = 'path'
-        }}, {{
-            name = 'cmdline'
-        }})
-    }),
 
     -- 设置补全显示的格式
     formatting = {
@@ -82,4 +60,32 @@ cmp.setup({
             end
         })
     }
+})
+
+-- 根据文件类型来选择补全来源
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({{
+        name = 'buffer'
+    }})
+})
+
+-- 命令模式下输入 `/` 启用补全
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {{
+        name = 'buffer'
+    }}
+})
+
+-- 命令模式下输入 `:` 启用补全
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({{
+        name = 'pathx'
+    }, {
+        name = 'cmdline',
+        option = {
+            ignore_cmds = {'Man', '!'}
+        }
+    }})
 })
