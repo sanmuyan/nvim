@@ -7,6 +7,9 @@ require("keybindings")
 -- 插件配置
 require("plugins")
 
+-- 日志配置
+require("plugin-config/notify")
+
 -- 标签配置
 require("plugin-config/bufferline")
 

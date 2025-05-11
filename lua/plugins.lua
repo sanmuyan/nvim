@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
         requires = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}
     }
 
+    -- 增强通知
+    use {'rcarriga/nvim-notify'}
+
     -- 状态栏
     use {
         'nvim-lualine/lualine.nvim',
