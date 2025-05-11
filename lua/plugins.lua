@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
     -- AI 补全
     use {
         'Exafunction/windsurf.nvim',
-        requires = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}
+        requires = 'nvim-lua/plenary.nvim'
     }
 
     -- 增强通知
