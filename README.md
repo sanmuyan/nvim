@@ -15,7 +15,7 @@ git clone https://github.com/sanmuyan/nvim.git \
 
 ```pwsh
 git clone https://github.com/sanmuyan/nvim.git `
-~\AppData\Local\nvim
+$env:LOCALAPPDATA\nvim
 ```
 
 ### 插件管理
@@ -25,10 +25,10 @@ git clone https://github.com/sanmuyan/nvim.git `
 ```shell
 # 下载 Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # 同步插件
-nvim -u ~/.config/nvim/first_init.lua --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim --cmd "let g:no_plugins_config = 1" --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 > Windows pwsh
@@ -36,10 +36,10 @@ nvim -u ~/.config/nvim/first_init.lua --headless -c 'autocmd User PackerComplete
 ```pwsh
 # 下载 Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim `
-~\AppData\Local\nvim\site\pack\packer\start\packer.nvim
+$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim
 
 # 同步插件
-nvim -u ~\AppData\Local\nvim\first_init.lua --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim --cmd "let g:no_plugins_config = 1" --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 ## 常用快捷键

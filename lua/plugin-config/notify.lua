@@ -6,21 +6,21 @@ local log_level_map = {
     error = vim.log.levels.ERROR
 }
 
-local log_level_env = vim.fn.getenv("VIM_LOG_LEVEL")
+local log_level_env = vim.fn.getenv("NVIM_LOG_LEVEL")
 
 if not log_level_map[log_level_env] then
     log_level_env = "info"
 end
 
 local log_level = log_level_map[log_level_env]
-
-local notify = require("notify")
-notify.setup({
-    level = log_level,
-    background_colour = "#000000"
-})
-
-vim.notify = notify
+local ok, notify = pcall(require, "notify")
+if ok then
+    notify.setup({
+        level = log_level,
+        background_colour = "#000000"
+    })
+    vim.notify = notify
+end
 
 -- local original_notify = vim.notify
 -- vim.notify = function(msg, level, opts)

@@ -8,6 +8,10 @@ return require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim'
     }
 
+    -- git 工具
+    use {'lewis6991/gitsigns.nvim'}
+    use {'sindrets/diffview.nvim'}
+
     -- 增强通知
     use {'rcarriga/nvim-notify'}
 
@@ -40,8 +44,9 @@ return require('packer').startup(function(use)
     use {'hrsh7th/cmp-cmdline'}
 
     -- 代码片段补全引擎	
-    -- use {'hrsh7th/vim-vsnip'}
-    -- use {'hrsh7th/cmp-vsnip'}
+    use {'hrsh7th/vim-vsnip'}
+    use {'hrsh7th/cmp-vsnip'}
+    
     use {'L3MON4D3/LuaSnip'}
     use {'saadparwaiz1/cmp_luasnip'}
 
