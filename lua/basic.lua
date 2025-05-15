@@ -4,7 +4,7 @@ vim.o.fileencoding = "utf-8"
 vim.o.fileencodings = "utf-8"
 
 -- 显示行号
-vim.o.number = true
+-- vim.o.number = true
 
 -- 高亮所在行
 vim.o.cursorline = true

@@ -7,6 +7,10 @@ require("keybindings")
 -- 命令配置
 require("commands")
 
+if os.getenv("NVIM_NO_PLUGINS") == "1" then
+    return
+end
+
 -- 插件配置
 local ok, _ = pcall(require, "packer")
 if not ok then
@@ -19,34 +23,37 @@ require("plugins")
 if vim.g.no_plugins_config == 1 then
     return
 end
--- Packer/config 修改后都需要编译才能生效
-vim.cmd("PackerCompile")
-
-require("plugin-config/notify")
 
 -- 日志配置
 require("plugin-config/notify")
 
--- 标签配置
-require("plugin-config/bufferline")
-
--- 文件树配置
-require("plugin-config/nvim-tree")
-
--- 快捷键提示配置
-require("plugin-config/which-key")
-
--- 自动补全配置
-require("plugin-config/cmp")
-
 -- 主题配置
 require("plugin-config/vscode")
 
--- 终端配置
-require("plugin-config/toggleterm")
-
--- AI 编码配置
-require("plugin-config/codeium")
+-- 标签配置
+require("plugin-config/bufferline")
 
 -- 状态栏配置
 require("plugin-config/lualine")
+
+-- 主线程空闲时执行
+vim.schedule(function()
+    -- Packer/config 修改后都需要编译才能生效
+    vim.cmd("PackerCompile")
+    
+    -- 文件树配置
+    require("plugin-config/nvim-tree")
+
+    -- 终端配置
+    require("plugin-config/toggleterm")
+
+    -- 快捷键提示配置
+    require("plugin-config/which-key")
+
+    -- 自动补全配置
+    require("plugin-config/cmp")
+
+    -- AI 编码配置
+    require("plugin-config/codeium")
+end)
+
