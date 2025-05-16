@@ -30,7 +30,7 @@ end
 function _M.shell_init()
     if _M.get_os_name() == "windows" then
         vim.opt.shellxquote = ""
-        vim.opt.shellcmdflag = "-NoProfile -Command"
+        vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"
         if _M.is_pwsh() then
             vim.opt.shell = "pwsh"
         else
@@ -117,18 +117,18 @@ function _M.config_download()
             return
         end
     end
+    local plugins_config = _M.get_plugins_config()
     local ok, result = _M.os_command("git pull")
     if not ok then
         _M.shell_failed_notify(result)
         return
     end
     notify.info(result)
-    if string.find(result, "Already", 1, true) then
-        return
+    if string.find(result, "plugins.lua", 1, true) then
+        vim.defer_fn(function()
+            _M.config_init()
+        end, 1000)
     end
-    vim.defer_fn(function()
-        _M.config_init()
-    end, 1000)
 end
 
 function _M.config_init()
