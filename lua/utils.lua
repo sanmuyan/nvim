@@ -19,28 +19,34 @@ function _M.get_os_name()
     return os_name
 end
 
-function _M.is_pwsh()
-    return vim.fn.executable("pwsh")
-end
-
-function _M.is_bash()
-    return vim.fn.executable("bash")
+function _M.is_installed_shell()
+    if _M.get_os_name() == "windows" then
+        if vim.fn.executable("pwsh") or vim.fn.executable("powershell") then
+            return true
+        end
+    else
+        if vim.fn.executable("bash") or vim.fn.executable("zsh") or vim.fn.executable("sh") then
+            return true
+        end
+    end
+    return false
 end
 
 function _M.shell_init()
+    if not _M.is_installed_shell() then
+        notify.warn("No any shell installed")
+        return
+    end
     if _M.get_os_name() == "windows" then
         vim.opt.shellxquote = ""
         vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"
-        if _M.is_pwsh() then
+        if vim.fn.executable("pwsh") then
             vim.opt.shell = "pwsh"
         else
             vim.opt.shell = "powershell"
         end
     else
-        if _M.is_bash() then
-            vim.opt.shellcmdflag = "-c"
-            vim.opt.shell = "bash"
-        end
+        vim.opt.shellcmdflag = "-c"
     end
 end
 
@@ -117,7 +123,6 @@ function _M.config_download()
             return
         end
     end
-    local plugins_config = _M.get_plugins_config()
     local ok, result = _M.os_command("git pull")
     if not ok then
         _M.shell_failed_notify(result)
