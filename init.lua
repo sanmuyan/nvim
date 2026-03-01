@@ -54,6 +54,6 @@ vim.schedule(function()
     require("plugin-config/cmp")
 
     -- AI 编码配置
-    require("plugin-config/codeium")
+    -- require("plugin-config/codeium")
 end)
 

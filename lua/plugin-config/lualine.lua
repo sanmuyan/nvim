@@ -18,6 +18,7 @@ end
 
 require('lualine').setup {
     sections = {
-        lualine_c = {'filename', codeium_status}
+        -- lualine_c = {'filename', codeium_status}
+        lualine_c = {'filename'}
     }
 }
