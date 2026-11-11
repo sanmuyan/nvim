@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
         'Exafunction/windsurf.nvim',
         requires = 'nvim-lua/plenary.nvim'
     }
+    use {'milanglacier/minuet-ai.nvim'}
 
     -- git 工具
     use {'lewis6991/gitsigns.nvim'}

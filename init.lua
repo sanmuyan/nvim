@@ -36,6 +36,12 @@ require("plugin-config/bufferline")
 -- 状态栏配置
 require("plugin-config/lualine")
 
+-- AI 编码配置
+-- 不能放到 schedule 里，否则不会自动启用
+require("plugin-config/minuet-ai")
+-- vim.cmd("Minuet virtualtext enable")
+
+
 -- 主线程空闲时执行
 vim.schedule(function()
     -- Packer/config 修改后都需要编译才能生效
